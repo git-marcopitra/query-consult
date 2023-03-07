@@ -7,10 +7,16 @@
     <title>Query Consult</title>
   </head>
   <body in-margin="0" in-padding="0" in-font-family="sans-serif">
-    <header in-display="flex" in-align-items="center" in-background="#333">
-      <h1 in-margin-left="2rem" in-color="#FFF" in-font-weight="400">Flask Extract</h1>
+    <header
+      in-display="flex"
+      in-align-items="center"
+      in-background="#333"
+      in-justify-content="space-between"
+      in-padding="0 2rem"
+    >
+      <h1 in-color="#FFF" in-font-weight="400">Flask Extract</h1>
       <div
-        in-display="flex"
+        in-display="none < none < flex"
         in-justify-content="space-between"
         in-flex="1"
         in-margin="0 2rem"
@@ -33,10 +39,43 @@
           <a href="#" in-use-class="link">Register</a>
         </div>
       </div>
+      <div in-color="#FFF" in-position="relative">
+        <button in-all="unset" onclick="toggleMenu()" id="menu_button">
+          Menu
+        </button>
+        <div
+          id="mobile_menu"
+          in-top="2rem"
+          in-right="-1rem"
+          in-display="flex"
+          in-background="#222"
+          in-text-align="right"
+          in-padding="1rem 2rem"
+          in-position="absolute"
+          in-flex-direction="column"
+          in-transform="translate(100vw)"
+          in-transition="transform 300ms ease-in-out"
+        >
+          <a
+            href="#"
+            in-color="#DDD"
+            in-padding="1rem"
+            in-def-class="link"
+            in-font-weight="500"
+            in-text-decoration="none"
+            in-on-hover="color: #FFF"
+            >Home</a
+          >
+          <a href="#" in-use-class="link">Market</a>
+          <a href="#" in-use-class="link">Login</a>
+          <a href="#" in-use-class="link">Register</a>
+        </div>
+      </div>
     </header>
     <script
       type="module"
-      src="https://unpkg.com/@stylin.js/stylina@0.0.3-alpha.9/dist/autorun.js"
+      src="https://unpkg.com/@stylin.js/stylina@0.0.3-alpha.10/dist/autorun.js"
     ></script>
+    <script src="./script.js"></script>
   </body>
 </html>
