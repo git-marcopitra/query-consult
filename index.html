@@ -5,21 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Query Consult</title>
+    <script src="./js/style-script.js"></script>
   </head>
   <body in-margin="0" in-padding="0" in-font-family="sans-serif">
     <header
       in-display="flex"
-      in-align-items="center"
-      in-background="#333"
-      in-justify-content="space-between"
       in-padding="0 2rem"
+      in-background="#333"
+      in-align-items="center"
+      in-justify-content="space-between"
     >
-      <h1 in-color="#FFF" in-font-weight="400">Flask Extract</h1>
+      <h1 in-color="#FFF" in-font-weight="400">QUERY<sub>er</sub></h1>
       <div
-        in-display="none < none < flex"
-        in-justify-content="space-between"
         in-flex="1"
         in-margin="0 2rem"
+        in-display="none < none < flex"
+        in-justify-content="space-between"
       >
         <nav>
           <a
@@ -28,22 +29,55 @@
             in-padding="1rem"
             in-def-class="link"
             in-font-weight="500"
+            in-display="inline-block"
             in-text-decoration="none"
             in-on-hover="color: #FFF"
-            >Home</a
           >
-          <a href="#" in-use-class="link">Market</a>
+            Home
+          </a>
+          <!-- start: DROPDOWN -->
+          <div in-use-class="link" class="dropdown" in-overflow="visible">
+            Dropdown
+            <ul
+              style="display: none"
+              in-padding="unset"
+              overflow="visible"
+              in-list-style="none"
+              in-def-class="dropdown-menu"
+              in-box-shadow="0 0 0.1rem #3333"
+              in-background="unset < unset < #282828"
+              in-position="static < static < absolute"
+            >
+              <li
+                in-cursor="pointer"
+                in-def-class="dropdown-item"
+                in-on-hover="background: #333"
+                in-padding="0.5rem 1rem < 0.5rem 1rem < 0.8rem 2rem"
+              >
+                Item 1
+              </li>
+              <li in-use-class="dropdown-item">Item 2</li>
+              <li in-use-class="dropdown-item">Item 3</li>
+              <li in-use-class="dropdown-item">Item 4</li>
+            </ul>
+          </div>
+          <!-- end: DROPDOWN -->
         </nav>
         <div>
           <a href="#" in-use-class="link">Login</a>
           <a href="#" in-use-class="link">Register</a>
         </div>
       </div>
-      <div in-color="#FFF" in-position="relative">
+      <div
+        in-color="#FFF"
+        in-position="relative"
+        in-display="block < block < none"
+      >
         <button in-all="unset" onclick="toggleMenu()" id="menu_button">
           Menu
         </button>
         <div
+          style="display: none"
           id="mobile_menu"
           in-top="2rem"
           in-right="-1rem"
@@ -53,8 +87,6 @@
           in-padding="1rem 2rem"
           in-position="absolute"
           in-flex-direction="column"
-          in-transform="translate(100vw)"
-          in-transition="transform 300ms ease-in-out"
         >
           <a
             href="#"
@@ -64,18 +96,68 @@
             in-font-weight="500"
             in-text-decoration="none"
             in-on-hover="color: #FFF"
-            >Home</a
           >
-          <a href="#" in-use-class="link">Market</a>
+            Home
+          </a>
+          <div in-use-class="link,dropdown" in-width="6rem">
+            Market
+            <ul in-use-class="dropdown-menu">
+              <li in-use-class="dropdown-item">Item 1</li>
+              <li in-use-class="dropdown-item">Item 2</li>
+              <li in-use-class="dropdown-item">Item 3</li>
+              <li in-use-class="dropdown-item">Item 4</li>
+            </ul>
+          </div>
           <a href="#" in-use-class="link">Login</a>
           <a href="#" in-use-class="link">Register</a>
         </div>
       </div>
     </header>
+    <main in-padding="2rem">
+      <label
+        in-display="flex"
+        in-color="#282828"
+        in-border="1px solid"
+        in-align-items="center"
+        in-margin-bottom="3rem"
+        in-border-radius="2rem"
+        in-padding-left="1.5rem"
+      >
+        <svg width="2rem" height="2rem" fill="none" viewBox="0 0 19 20">
+          <path
+            d="M14.68 9.32C14.2622 8.90219 13.7661 8.57095 13.22 8.34526C12.674 8.11957 12.0888 8.00388 11.4979 8.00481C10.9071 8.00574 10.3222 8.12327 9.77689 8.35068C9.23155 8.57808 8.73646 8.91088 8.32 9.33C7.90154 9.74712 7.56952 10.2427 7.34297 10.7884C7.11643 11.3341 6.99981 11.9192 6.99981 12.51C6.99981 13.1008 7.11643 13.6859 7.34297 14.2316C7.56952 14.7773 7.90154 15.2729 8.32 15.69C9.04099 16.4084 9.98385 16.8616 10.9952 16.976C12.0065 17.0904 13.0268 16.8592 13.89 16.32L17 19.39L18.39 18L15.3 14.89C16.43 13.12 16.17 10.8 14.68 9.32ZM13.27 14.27C12.29 15.25 10.71 15.24 9.73 14.27C8.76 13.29 8.76 11.71 9.74 10.73C10.71 9.76 12.29 9.76 13.27 10.73C14.24 11.71 14.24 13.29 13.27 14.27ZM6.9 17.1C6.2474 16.4406 5.74285 15.6497 5.42 14.78C2.27 14.25 0 12.76 0 11V14C0 16.21 3.58 18 8 18C7.6 17.74 7.23 17.44 6.9 17.1ZM0 6V9C0 10.68 2.07 12.12 5 12.7V12.5C5 11.57 5.2 10.65 5.58 9.81C2.34 9.3 0 7.79 0 6ZM8 0C3.58 0 0 1.79 0 4C0 6 3 7.68 6.85 8H6.9C8.1 6.74 9.76 6 11.5 6C12.41 6 13.31 6.19 14.14 6.56C14.6445 6.3299 15.0808 5.97325 15.4068 5.52468C15.7327 5.07611 15.937 4.55088 16 4C16 1.79 12.42 0 8 0Z"
+            fill="currentColor"
+          />
+        </svg>
+        <input
+          id="query"
+          in-all="unset"
+          in-width="100%"
+          in-padding="1rem"
+          name="query"
+          placeholder="Eg.: SELECT * FROM example_table"
+        />
+        <button
+          in-all="unset"
+          in-color="#fff"
+          in-margin="0.5rem"
+          in-cursor="pointer"
+          in-font-weight="bold"
+          in-background="#282828"
+          in-padding="0.5rem 1rem"
+          in-border-radius="1.2rem"
+          in-text-transform="uppercase"
+          onclick="submitConsult()"
+        >
+          Executar
+        </button>
+      </label>
+      <table in-border-collapse="collapse" in-width="100%"></table>
+    </main>
     <script
       type="module"
-      src="https://unpkg.com/@stylin.js/stylina@0.0.3-alpha.10/dist/autorun.js"
+      src="https://unpkg.com/@stylin.js/stylina@0.0.3-alpha.11/dist/autorun.js"
     ></script>
-    <script src="./script.js"></script>
+    <script src="./js/get-query.js"></script>
   </body>
 </html>
